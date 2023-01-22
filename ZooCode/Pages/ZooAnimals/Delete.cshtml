@@ -1,0 +1,34 @@
+﻿@page
+@model ZooCode.Pages.ZooAnimals.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Slet</h1>
+
+<h3>Er du sikker på du vil slette dette?</h3>
+<div>
+    <h4>ZooDyr</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ZooAnimal.Zoo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ZooAnimal.Zoo.Zoo_name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ZooAnimal.Animal)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ZooAnimal.Animal.Animal_name)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="ZooAnimal.ZooAnimalID" />
+        <input type="submit" value="Slet" class="btn btn-danger" /> |
+        <a asp-page="./Index">Tilbage til listen</a>
+    </form>
+</div>

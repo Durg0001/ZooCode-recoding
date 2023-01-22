@@ -1,0 +1,25 @@
+﻿@page
+@model ZooCode.Pages.Animals.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detaljer</h1>
+
+<div>
+    <h4>Dyr</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Animal.Animal_name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Animal.Animal_name)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Animal.AnimalID">Rediger</a> |
+    <a asp-page="./Index">Tilbage til listen</a>
+</div>
